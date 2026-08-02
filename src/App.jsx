@@ -3,7 +3,7 @@ import { useDarkMode } from './lib/useDarkMode';
 
 const PROJECTS = [
   {
-    name: 'Budget App',
+    name: 'Ledgr',
     description: 'A budgeting dashboard that survived contact with my actual finances.',
     href: 'https://bgt.lukeswift.net',
     icon: Wallet,
