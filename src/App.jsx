@@ -8,9 +8,9 @@ const PROJECTS = [
     href: 'https://bgt.lukeswift.net',
   },
   {
-    name: 'Project Two',
-    description: 'Another one that started as "just a quick script" and did not stay quick.',
-    href: '#',
+    name: 'Immersio',
+    description: 'A no-paywall language immersion tracker — log sessions, streaks, and stats.',
+    href: 'https://lng.lukeswift.net',
   },
   {
     name: 'Project Three',
