@@ -1,4 +1,4 @@
-import { Sun, Moon, Link2, ArrowUpRight, Sparkles, FolderGit2 } from 'lucide-react';
+import { Sun, Moon, Link2, ArrowUpRight, Sparkles, Wallet, Languages, Moon as MoonProject, Flame, BookOpen } from 'lucide-react';
 import { useDarkMode } from './lib/useDarkMode';
 
 const PROJECTS = [
@@ -6,25 +6,29 @@ const PROJECTS = [
     name: 'Budget App',
     description: 'A budgeting dashboard that survived contact with my actual finances.',
     href: 'https://bgt.lukeswift.net',
+    icon: Wallet,
   },
   {
     name: 'Immersio',
     description: 'A no-paywall language immersion tracker — log sessions, streaks, and stats.',
     href: 'https://lng.lukeswift.net',
+    icon: Languages,
   },
   {
     name: 'Project Three',
     description: 'Built at an hour that was not good for decision-making. Still standing, somehow.',
     href: '#',
+    icon: MoonProject,
   },
   {
     name: 'Project Four',
     description: 'TBD name, TBD scope, fully committed vibes.',
     href: '#',
+    icon: Flame,
   },
 ];
 
-function ProjectCard({ name, description, href }) {
+function ProjectCard({ name, description, href, icon: Icon }) {
   const isExternal = href !== '#';
   return (
     <a
@@ -35,7 +39,7 @@ function ProjectCard({ name, description, href }) {
       <div>
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center justify-center w-9 h-9 shrink-0 rounded-lg bg-blue-50 dark:bg-blue-500/10 text-blue-500 dark:text-blue-400">
-            <FolderGit2 size={18} />
+            <Icon size={18} />
           </div>
           <ArrowUpRight
             size={18}
@@ -56,15 +60,29 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 dark:bg-[#121212] text-slate-900 dark:text-white/90 p-3 sm:p-4 md:p-8 font-sans transition-colors">
       <div className="max-w-6xl mx-auto space-y-10 sm:space-y-14">
         <div className="flex justify-between items-center">
-          <span className="font-semibold tracking-tight text-slate-800 dark:text-white/90">Luke Swift</span>
-          <button
-            type="button"
-            onClick={() => setIsDark(!isDark)}
-            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="flex items-center justify-center w-9 h-9 shrink-0 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 text-slate-500 dark:text-white/60 hover:text-slate-700 dark:hover:text-white/90 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg shadow-sm transition-colors"
-          >
-            {isDark ? <Sun size={16} /> : <Moon size={16} />}
-          </button>
+          <div className="flex items-center gap-2.5">
+            <img src="/favicon.svg" alt="" className="w-8 h-8 rounded-lg shadow-sm" />
+            <span className="font-semibold text-lg tracking-tight text-slate-800 dark:text-white/90">Luke Swift</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://blg.lukeswift.net"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-sm font-medium text-slate-500 dark:text-white/60 hover:text-slate-700 dark:hover:text-white/90 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 shadow-sm transition-colors"
+            >
+              <BookOpen size={15} />
+              Blog
+            </a>
+            <button
+              type="button"
+              onClick={() => setIsDark(!isDark)}
+              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="flex items-center justify-center w-9 h-9 shrink-0 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 text-slate-500 dark:text-white/60 hover:text-slate-700 dark:hover:text-white/90 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg shadow-sm transition-colors"
+            >
+              {isDark ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+          </div>
         </div>
 
         <main className="space-y-10 sm:space-y-14">
