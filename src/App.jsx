@@ -42,7 +42,7 @@ function ProjectCard({ name, description, href }) {
             className="text-slate-300 dark:text-white/20 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors shrink-0"
           />
         </div>
-        <h3 className="mt-4 font-semibold text-slate-800 dark:text-white/90 truncate">{name}</h3>
+        <h2 className="mt-4 font-semibold text-slate-800 dark:text-white/90 truncate">{name}</h2>
         <p className="mt-1.5 text-sm text-slate-500 dark:text-white/60 leading-relaxed">{description}</p>
       </div>
     </a>
@@ -67,25 +67,27 @@ export default function App() {
           </button>
         </div>
 
-        <div className="text-center max-w-2xl mx-auto space-y-4 pt-4 sm:pt-8">
-          <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-500 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 rounded-full px-3 py-1">
-            <Sparkles size={13} />
-            Certified Vibecoder
+        <main className="space-y-10 sm:space-y-14">
+          <div className="text-center max-w-2xl mx-auto space-y-4 pt-4 sm:pt-8">
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-500 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 rounded-full px-3 py-1">
+              <Sparkles size={13} />
+              Certified Vibecoder
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white/90">
+              Projects
+            </h1>
+            <p className="text-base sm:text-lg text-slate-500 dark:text-white/60 leading-relaxed">
+              This is where I keep my vibecoded projects and 2 a.m. ramblings that seemed
+              like genius at the time and mostly held up in the morning.
+            </p>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white/90">
-            Projects
-          </h1>
-          <p className="text-base sm:text-lg text-slate-500 dark:text-white/60 leading-relaxed">
-            This is where I keep my vibecoded projects and 2 a.m. ramblings that seemed
-            like genius at the time and mostly held up in the morning.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.name} {...project} />
-          ))}
-        </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            {PROJECTS.map((project) => (
+              <ProjectCard key={project.name} {...project} />
+            ))}
+          </div>
+        </main>
 
         <div className="flex justify-center pt-4">
           <a
