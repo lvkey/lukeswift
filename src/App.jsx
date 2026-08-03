@@ -1,4 +1,4 @@
-import { Sun, Moon, Link2, ArrowUpRight, Sparkles, Wallet, Languages, Moon as MoonProject, Flame, BookOpen } from 'lucide-react';
+import { Sun, Moon, Link2, ArrowUpRight, Sparkles, Wallet, Languages, Moon as MoonProject, Flame, BookOpen, LayoutGrid } from 'lucide-react';
 import { useDarkMode } from './lib/useDarkMode';
 
 const PROJECTS = [
@@ -65,6 +65,13 @@ export default function App() {
             <span className="font-semibold text-lg tracking-tight text-slate-800 dark:text-white/90">Luke Swift</span>
           </div>
           <div className="flex items-center gap-2">
+            <a
+              href="/dashboard"
+              className="flex items-center gap-1.5 text-sm font-medium text-slate-500 dark:text-white/60 hover:text-slate-700 dark:hover:text-white/90 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 shadow-sm transition-colors"
+            >
+              <LayoutGrid size={15} />
+              Dashboard
+            </a>
             <a
               href="https://blg.lukeswift.net"
               target="_blank"

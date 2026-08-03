@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "predev": "node scripts/fetch-dashboard-data.mjs",
     "dev": "vite",
-    "build": "vite build",
+    "build": "node scripts/fetch-dashboard-data.mjs && vite build",
     "preview": "vite preview"
   },
   "dependencies": {

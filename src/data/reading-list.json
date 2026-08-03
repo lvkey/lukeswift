@@ -1,0 +1,12 @@
+{
+  "source": "placeholder",
+  "items": [
+    { "title": "The Phoenix Project", "progressPct": 85 },
+    { "title": "The Pragmatic Programmer", "progressPct": 45 },
+    { "title": "Sapiens", "progressPct": 20 }
+  ],
+  "goals": [
+    "Complete Rust Tutorial",
+    "Launch Immersio MVP"
+  ]
+}
