@@ -1,5 +1,7 @@
 import { Sun, Moon, Link2, ArrowUpRight, Sparkles, Wallet, Languages, Moon as MoonProject, Flame, BookOpen, LayoutGrid } from 'lucide-react';
 import { useDarkMode } from './lib/useDarkMode';
+import { Button } from './components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardAction } from './components/ui/card';
 
 const PROJECTS = [
   {
@@ -34,21 +36,22 @@ function ProjectCard({ name, description, href, icon: Icon }) {
     <a
       href={href}
       {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className="group flex flex-col justify-between bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-blue-300 dark:hover:border-blue-500/40 transition-all min-w-0"
+      className="block h-full min-w-0"
     >
-      <div>
-        <div className="flex items-start justify-between gap-3">
+      <Card className="h-full gap-3 transition-shadow hover:shadow-md hover:ring-foreground/15">
+        <CardHeader>
           <div className="flex items-center justify-center w-9 h-9 shrink-0 rounded-lg bg-blue-50 dark:bg-blue-500/10 text-blue-500 dark:text-blue-400">
             <Icon size={18} />
           </div>
-          <ArrowUpRight
-            size={18}
-            className="text-slate-300 dark:text-white/20 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors shrink-0"
-          />
-        </div>
-        <h2 className="mt-4 font-semibold text-slate-800 dark:text-white/90 truncate">{name}</h2>
-        <p className="mt-1.5 text-sm text-slate-500 dark:text-white/60 leading-relaxed">{description}</p>
-      </div>
+          <CardAction>
+            <ArrowUpRight size={18} className="text-muted-foreground/50" />
+          </CardAction>
+          <CardTitle className="mt-3 truncate">{name}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <CardDescription className="leading-relaxed">{description}</CardDescription>
+        </CardContent>
+      </Card>
     </a>
   );
 }
@@ -57,40 +60,37 @@ export default function App() {
   const [isDark, setIsDark] = useDarkMode();
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#121212] text-slate-900 dark:text-white/90 p-3 sm:p-4 md:p-8 font-sans transition-colors">
+    <div className="min-h-screen bg-background text-foreground p-3 sm:p-4 md:p-8 font-sans transition-colors">
       <div className="max-w-6xl mx-auto space-y-10 sm:space-y-14">
-        <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2.5">
-            <img src="/favicon.svg" alt="" className="w-8 h-8 rounded-lg shadow-sm" />
-            <span className="font-semibold text-lg tracking-tight text-slate-800 dark:text-white/90">Luke Swift</span>
+        <header className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+          <div className="flex items-center gap-2 sm:gap-2.5 min-w-0">
+            <img src="/favicon.svg" alt="" className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg shadow-sm shrink-0" />
+            <span className="font-semibold text-base sm:text-lg tracking-tight truncate">Luke Swift</span>
           </div>
-          <div className="flex items-center gap-2">
-            <a
-              href="/dashboard"
-              className="flex items-center gap-1.5 text-sm font-medium text-slate-500 dark:text-white/60 hover:text-slate-700 dark:hover:text-white/90 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 shadow-sm transition-colors"
-            >
-              <LayoutGrid size={15} />
-              Dashboard
-            </a>
-            <a
-              href="https://blg.lukeswift.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-medium text-slate-500 dark:text-white/60 hover:text-slate-700 dark:hover:text-white/90 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 rounded-lg px-3 py-2 shadow-sm transition-colors"
-            >
-              <BookOpen size={15} />
-              Blog
-            </a>
-            <button
-              type="button"
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+            <Button asChild variant="outline" className="text-muted-foreground hover:text-foreground">
+              <a href="/dashboard" aria-label="Dashboard">
+                <LayoutGrid size={15} />
+                <span className="hidden sm:inline">Dashboard</span>
+              </a>
+            </Button>
+            <Button asChild variant="outline" className="text-muted-foreground hover:text-foreground">
+              <a href="https://blg.lukeswift.net" target="_blank" rel="noopener noreferrer" aria-label="Blog">
+                <BookOpen size={15} />
+                <span className="hidden sm:inline">Blog</span>
+              </a>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
               onClick={() => setIsDark(!isDark)}
               aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-              className="flex items-center justify-center w-9 h-9 shrink-0 bg-white dark:bg-[#1e1e1e] border border-slate-200 dark:border-white/10 text-slate-500 dark:text-white/60 hover:text-slate-700 dark:hover:text-white/90 hover:bg-slate-100 dark:hover:bg-white/10 rounded-lg shadow-sm transition-colors"
+              className="text-muted-foreground hover:text-foreground"
             >
               {isDark ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
+            </Button>
           </div>
-        </div>
+        </header>
 
         <main className="space-y-10 sm:space-y-14">
           <div className="text-center max-w-2xl mx-auto space-y-4 pt-4 sm:pt-8">
@@ -98,10 +98,10 @@ export default function App() {
               <Sparkles size={13} />
               Certified Vibecoder
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 dark:text-white/90">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
               Projects
             </h1>
-            <p className="text-base sm:text-lg text-slate-500 dark:text-white/60 leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
               This is where I keep my vibecoded projects and 2 a.m. ramblings that seemed
               like genius at the time and mostly held up in the morning.
             </p>
@@ -115,13 +115,12 @@ export default function App() {
         </main>
 
         <div className="flex justify-center pt-4">
-          <a
-            href="#"
-            className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-white/60 hover:text-slate-700 dark:hover:text-white/90 transition-colors"
-          >
-            <Link2 size={16} />
-            More on GitHub
-          </a>
+          <Button asChild variant="ghost" className="text-muted-foreground hover:text-foreground">
+            <a href="#">
+              <Link2 size={16} />
+              More on GitHub
+            </a>
+          </Button>
         </div>
       </div>
     </div>
