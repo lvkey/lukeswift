@@ -9,9 +9,9 @@ const PROJECTS = [
     icon: Wallet,
   },
   {
-    name: 'Immersio',
+    name: 'Langfolio',
     description: 'A no-paywall language immersion tracker — log sessions, streaks, and stats.',
-    href: 'https://lng.lukeswift.net',
+    href: 'https://mylangfolio.com',
     icon: Languages,
   },
   {

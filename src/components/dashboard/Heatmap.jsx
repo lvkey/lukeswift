@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // Generalized from immersio/src/components/ActivityHeatmap.jsx so both the
-// GitHub and Immersio cards can share one grid/tooltip implementation.
+// GitHub and Langfolio cards can share one grid/tooltip implementation.
 
 function buildCells(valuesByDate, weeks) {
   const today = new Date();

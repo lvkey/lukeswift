@@ -490,7 +490,7 @@ async function loadReadingList() {
 }
 
 async function main() {
-  const [github, immersio, finances, weather, reading] = await Promise.all([
+  const [github, langfolio, finances, weather, reading] = await Promise.all([
     fetchGithubContributions(),
     fetchImmersio(),
     fetchFinances(),
@@ -501,7 +501,7 @@ async function main() {
   const data = {
     generatedAt: new Date().toISOString(),
     github,
-    immersio,
+    langfolio,
     finances,
     health: placeholderHealth(),
     reading,

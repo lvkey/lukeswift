@@ -20,9 +20,9 @@ function formatMinutes(totalMinutes) {
   return `${hours}h ${mins}m`;
 }
 
-export function ImmersioCard({ data }) {
+export function LangfolioCard({ data }) {
   return (
-    <DashboardCard title="Immersio" accent="Language Learning" icon={Languages}>
+    <DashboardCard title="Langfolio" accent="Language Learning" icon={Languages}>
       <p className="text-sm text-slate-500 dark:text-white/60 mb-3">
         Total logged: <span className="font-semibold text-slate-800 dark:text-white/90">{formatMinutes(data.totalMinutes)}</span>
       </p>
@@ -41,7 +41,7 @@ export function ImmersioCard({ data }) {
         </p>
       </div>
       <PlaceholderNote source={data.source} />
-      <PlaceholderNote source={data.lessons.source}>Lesson count is placeholder (Immersio doesn't track discrete lessons yet)</PlaceholderNote>
+      <PlaceholderNote source={data.lessons.source}>Lesson count is placeholder (Langfolio doesn't track discrete lessons yet)</PlaceholderNote>
     </DashboardCard>
   );
 }

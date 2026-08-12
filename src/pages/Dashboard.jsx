@@ -3,7 +3,7 @@ import { Sun, Moon, BookOpen, LayoutGrid } from 'lucide-react';
 import { useDarkMode } from '../lib/useDarkMode';
 import dashboardData from '../data/dashboard-data.json';
 import { GithubContributionsCard } from '../components/dashboard/GithubContributionsCard';
-import { ImmersioCard } from '../components/dashboard/ImmersioCard';
+import { LangfolioCard } from '../components/dashboard/LangfolioCard';
 import { FinancesCard } from '../components/dashboard/FinancesCard';
 import { HealthCard } from '../components/dashboard/HealthCard';
 import { ReadingCard } from '../components/dashboard/ReadingCard';
@@ -15,7 +15,7 @@ import { WeatherCard } from '../components/dashboard/WeatherCard';
 // this list, not redesign it.
 const MAIN_COLUMN = [
   { key: 'github', render: () => <GithubContributionsCard data={dashboardData.github} /> },
-  { key: 'immersio', render: () => <ImmersioCard data={dashboardData.immersio} /> },
+  { key: 'langfolio', render: () => <LangfolioCard data={dashboardData.langfolio} /> },
   { key: 'finances', render: () => <FinancesCard data={dashboardData.finances} /> },
 ];
 
