@@ -1,7 +1,8 @@
-import { Sun, Moon, Link2, ArrowUpRight, Sparkles, Wallet, Languages, Moon as MoonProject, Flame, BookOpen, LayoutGrid } from 'lucide-react';
+import { Sun, Moon, Link2, ArrowUpRight, Sparkles, Wallet, Languages, Flame, BookOpen, LayoutGrid } from 'lucide-react';
 import { useDarkMode } from './lib/useDarkMode';
 import { Button } from './components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardAction } from './components/ui/card';
+import { TchbaeLogo } from './components/icons/TchbaeLogo';
 
 const PROJECTS = [
   {
@@ -17,10 +18,10 @@ const PROJECTS = [
     icon: Languages,
   },
   {
-    name: 'Project Three',
-    description: 'Built at an hour that was not good for decision-making. Still standing, somehow.',
-    href: '#',
-    icon: MoonProject,
+    name: 'TCHBAE',
+    description: 'That Could Have Been An Email — flags meetings before you have to sit through them.',
+    href: 'https://cbe.lukeswift.net',
+    icon: TchbaeLogo,
   },
   {
     name: 'Project Four',
