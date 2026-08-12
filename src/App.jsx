@@ -19,7 +19,7 @@ const PROJECTS = [
   },
   {
     name: 'TCHBAE',
-    description: 'That Could Have Been An Email — flags meetings before you have to sit through them.',
+    description: 'That Could Have Been An Email — tracks the dollar cost of a meeting while it burns.',
     href: 'https://cbe.lukeswift.net',
     icon: TchbaeLogo,
   },
